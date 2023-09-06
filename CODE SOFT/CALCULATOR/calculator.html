@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="calculator.css">
+    <title>CALCULATOR</title>
+  </head>
+  <body>
+    <div class="header">
+       <div class="col">
+          <form id="form1">
+             <img src="image_cal.jpeg"><br>
+             <h1>Hello,I am<br><span style="color:red;font-size:30px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>Calculator</h1>
+             <p>I am machine for calculation difficult problems.</p>
+          </form>
+      </div>
+      <div class="col">
+         <div id="form2">
+            <input type="text" id="display"placeholder="Result">
+            <button class="button"value="0">0</button>
+            <button class="button"value="1">1</button>
+            <button class="button"value="2">2</button>
+            <button class="button"value="3">3</button><br>
+            <button class="button"value="4">4</button>
+            <button class="button"value="5">5</button>
+            <button class="button"value="6">6</button>
+            <button class="button"value="7">7</button><br>
+            <button class="button"value="8">8</button>
+            <button class="button"value="9">9</button>
+            <button class="button"value=".">.</button>
+            <button class="button"style="color:red"value="-">-</button><br>
+            <button class="button"style="color:red"value="/">/</button>
+            <button class="button"style="color:red"value="+">+</button>
+            <button class="button"style="color:red"value="%">%</button>
+            <button class="button"style="color:red"value="*">*</button><br>
+            <button class="button"style="color:blue"value="AC">AC</button>
+            <button class="button"style="color:blue"value="00">00</button>
+            <button class="button"style="background-color:BLUE;width:130px;color:red;"value="=">=</button>
+       </div>
+     </div>
+     <script>
+            const input_display = document.getElementById('display');
+            const buttons = document.querySelectorAll('button');
+            let str2 = "";
+            let arr1 = Array.from(buttons);
+            arr1.forEach(button => {
+            button.addEventListener('click', (e) =>{
+            if(e.target.innerHTML == '='){
+                str2 = eval(str2);
+                input_display.value = str2;
+            }
+            else if(e.target.innerHTML == 'AC'){
+                str2 = "";
+                input_display.value = str2;
+            }
+            else{
+                str2 += e.target.innerHTML;
+                input_display.value = str2;
+            }
+               })
+                  })
+    </script>
+  </body>
+</html>
